@@ -82,6 +82,7 @@ celerybeat-schedule
 
 # virtualenv
 venv/
+venv/
 ENV/
 
 # Spyder project settings
@@ -149,3 +150,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# Machine Learning
+Datasets
