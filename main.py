@@ -9,7 +9,7 @@ def train(model, dataloader, optimizer, epoch, n_epochs, log_interval=100, devic
         model.train()
 
         # check if labeled dataset
-        x, y = data[0].float(), None
+        x, y = data[0], None
         x = x.view(x.shape[0], -1).to(device)
 
         loss = - model.log_prob(x, y).mean(0)
