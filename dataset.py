@@ -28,7 +28,7 @@ def fixed_to_table(fixed_file, output_file=None, chunksize=10000):
 
     i = 0
     while i < nrows:
-        al_df = store.select(key='df', start=i, stop=i+chunksize)
+        al_df = store.select(key='df', start=i, stop=i+chunksize).astype('float32')
         if i == 0:
             al_df.to_hdf(output_file, 'df', mode='w', format='table')
         else:

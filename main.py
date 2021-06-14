@@ -19,8 +19,8 @@ def train(model, dataloader, optimizer, epoch, n_epochs, log_interval=100, devic
         optimizer.step()
 
         if i % log_interval == 0:
-            print('epoch {:3d} / {}, loss {:.4f}'.format(
-                epoch, n_epochs, loss.item()))
+            print('epoch {:3d} / {}, step {:4d} / {}; loss {:.4f}'.format(
+                epoch, n_epochs, i, len(dataloader), loss.item()))
 
 
 if __name__ == '__main__':
