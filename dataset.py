@@ -89,6 +89,9 @@ class CustomTrainLoaderLHC:
             raise StopIteration
         return self.ds[indices]
 
+    def __len__(self):
+        return len(self.sampler)
+
 
 if __name__ == '__main__':
     dl = CustomTrainLoaderLHC('Datasets/events_anomalydetection_tiny_table.h5')
