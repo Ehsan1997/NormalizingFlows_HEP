@@ -1,3 +1,10 @@
+"""
+This file has two main components.
+1. Function `fixed_to_table`, which converts the fixed form h5 to table form h5.
+Usage: fixed_to_table(example.h5)
+2. Class CustomTrainLoaderLHC, this class is an optimized trainloader that works on table form h5 files.
+USage: dataloader = CustomTrainLoaderLHC('some_table_hdf.h5')
+"""
 import pandas as pd
 import torch
 
