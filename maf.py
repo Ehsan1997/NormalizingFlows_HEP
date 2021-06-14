@@ -1,3 +1,9 @@
+"""
+Acknowledgement: Kamen Bliznashki
+Thanks for the repo following repo: https://github.com/kamenbliznashki/normalizing_flows
+"""
+
+
 import torch
 import math
 
