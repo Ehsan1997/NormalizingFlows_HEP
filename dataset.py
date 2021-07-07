@@ -70,10 +70,14 @@ class LHCAnomalyDataset(torch.utils.data.Dataset):
 
 
 class CustomTrainLoaderLHC:
-    def __init__(self, file_name, batch_size=500):
+    def __init__(self, file_name, batch_size=500, shuffle=True):
         self.ds = LHCAnomalyDataset(file_name)
+        if shuffle:
+            inner_sampler = torch.utils.data.sampler.RandomSampler(self.ds)
+        else:
+            inner_sampler = torch.utils.data.sampler.SequentialSampler(self.ds)
         self.sampler = torch.utils.data.sampler.BatchSampler(
-            torch.utils.data.sampler.RandomSampler(self.ds),
+            inner_sampler,
             batch_size=batch_size,
             drop_last=False)
         self.sampler_iter = iter(self.sampler)
@@ -94,7 +98,7 @@ class CustomTrainLoaderLHC:
 
 
 if __name__ == '__main__':
-    dl = CustomTrainLoaderLHC('Datasets/events_anomalydetection_tiny_table.h5')
+    dl = CustomTrainLoaderLHC('Datasets/events_anomalydetection_tiny_table.h5', shuffle=False)
     n_epochs = 2
     for epoch in range(n_epochs):
         print(f'Epochs: {epoch}')
