@@ -28,7 +28,7 @@ def fixed_to_table(fixed_file, output_file=None, chunksize=10000):
 
     i = 0
     while i < nrows:
-        al_df = store.select(key='df', start=i, stop=i+chunksize).astype('float32')
+        al_df = store.select(key='df', start=i, stop=i + chunksize).astype('float32')
         if i == 0:
             al_df.to_hdf(output_file, 'df', mode='w', format='table')
         else:
@@ -59,7 +59,7 @@ class LHCAnomalyDataset(torch.utils.data.Dataset):
             idx = idx.tolist()
 
         if isinstance(idx, int):
-          idx = [idx]
+            idx = [idx]
 
         fetched_data = torch.tensor(pd.read_hdf(self.hdf_store, 'df', where=pd.Index(idx)).values)
 
@@ -95,6 +95,20 @@ class CustomTrainLoaderLHC:
 
     def __len__(self):
         return len(self.sampler)
+
+
+def normalize_data(batch_data):
+    batch_std, batch_mean = torch.std(batch_data, 0), torch.mean(batch_data, 0)
+    batch_data = (batch_data - batch_mean) / batch_std
+    batch_data = torch.nan_to_num(batch_data)
+
+    return batch_data, batch_std, batch_mean
+
+
+def denormalize_data(batch_data, batch_std, batch_mean):
+    batch_data = (batch_data * batch_std) + batch_mean
+
+    return batch_data
 
 
 if __name__ == '__main__':
