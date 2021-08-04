@@ -123,7 +123,7 @@ def dequantize_data(batch_data):
     return ret_data, max_, min_, rand_noise
 
 
-def reverse_quantize_data(batch_data, batch_max, batch_min, rand_noise=None):
+def reverse_dequantize_data(batch_data, batch_max, batch_min, rand_noise=None):
     ret_data = torch.sigmoid(batch_data)
     ret_data *= 255.0
     if rand_noise is not None:
@@ -145,4 +145,4 @@ if __name__ == '__main__':
     data, _ = next(iter(dl))
     print(data)
     data, max_, min_, rand_noise = dequantize_data(data)
-    print(reverse_quantize_data(data, max_, min_, rand_noise))
+    print(reverse_dequantize_data(data, max_, min_, rand_noise))
