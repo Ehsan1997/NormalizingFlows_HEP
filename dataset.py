@@ -111,12 +111,37 @@ def denormalize_data(batch_data, batch_std, batch_mean):
     return batch_data
 
 
+def dequantize_data(batch_data):
+    max_ = batch_data.max(0)[0]
+    min_ = batch_data.min(0)[0]
+    ret_data = (torch.nan_to_num((batch_data - min_) / (max_ - min_)) * 255.0)
+    rand_noise = torch.rand_like(ret_data)
+    ret_data = ret_data + rand_noise
+    ret_data = ret_data / 255.0
+    ret_data = torch.logit(ret_data, eps=1e-6)
+
+    return ret_data, max_, min_, rand_noise
+
+
+def reverse_quantize_data(batch_data, batch_max, batch_min, rand_noise):
+    ret_data = torch.sigmoid(batch_data)
+    ret_data *= 255.0
+    ret_data -= rand_noise
+    ret_data /= 255.0
+    ret_data = ret_data * (batch_max - batch_min) + batch_min
+
+    return ret_data
+
 if __name__ == '__main__':
     dl = CustomTrainLoaderLHC('Datasets/events_anomalydetection_tiny_table.h5', shuffle=False)
-    n_epochs = 2
-    for epoch in range(n_epochs):
-        print(f'Epochs: {epoch}')
-        for i, (data, label) in enumerate(dl):
-            print('LOL')
-            if i == 0:
-                print(data[0])
+    # n_epochs = 2
+    # for epoch in range(n_epochs):
+    #     print(f'Epochs: {epoch}')
+    #     for i, (data, label) in enumerate(dl):
+    #         print('LOL')
+    #         if i == 0:
+    #             print(data[0])
+    data, _ = next(iter(dl))
+    print(data)
+    data, max_, min_, rand_noise = dequantize_data(data)
+    print(reverse_quantize_data(data, max_, min_, rand_noise))
