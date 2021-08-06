@@ -115,8 +115,10 @@ def denormalize_data(batch_data, batch_std, batch_mean):
 
 @torch.no_grad()
 def dequantize_data(batch_data):
-    max_ = batch_data.max(0)[0]
-    min_ = batch_data.min(0)[0]
+    # max_ = batch_data.max(0)[0]
+    # min_ = batch_data.min(0)[0]
+    max_ = batch_data.max()
+    min_ = batch_data.min()
     ret_data = (torch.nan_to_num((batch_data - min_) / (max_ - min_)) * 255.0)
     rand_noise = torch.rand_like(ret_data)
     ret_data = ret_data + rand_noise
