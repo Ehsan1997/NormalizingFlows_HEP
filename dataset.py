@@ -98,8 +98,11 @@ class CustomTrainLoaderLHC:
 
 
 @torch.no_grad()
-def normalize_data(batch_data):
-    batch_std, batch_mean = torch.std(batch_data, 0), torch.mean(batch_data, 0)
+def normalize_data(batch_data, batch_std=None, batch_mean=None):
+    if batch_std is None:
+        batch_std = torch.std(batch_data, 0)
+    if batch_mean is None:
+        batch_mean = torch.mean(batch_data, 0)
     batch_data = (batch_data - batch_mean) / batch_std
     batch_data = torch.nan_to_num(batch_data)
 
@@ -114,9 +117,11 @@ def denormalize_data(batch_data, batch_std, batch_mean):
 
 
 @torch.no_grad()
-def dequantize_data(batch_data):
-    max_ = batch_data.max(0)[0]
-    min_ = batch_data.min(0)[0]
+def dequantize_data(batch_data, max_=None, min_=None):
+    if max_ is None:
+        max_ = batch_data.max(0)[0]
+    if min_ is None:
+        min_ = batch_data.min(0)[0]
     ret_data = (torch.nan_to_num((batch_data - min_) / (max_ - min_)) * 255.0)
     rand_noise = torch.rand_like(ret_data)
     ret_data = ret_data + rand_noise
@@ -149,6 +154,4 @@ if __name__ == '__main__':
     data, _ = next(iter(dl))
     print(data)
     data, max_, min_, rand_noise = dequantize_data(data)
-    print('______________________')
-    print(rand_noise)
     print(reverse_dequantize_data(data, max_, min_))
