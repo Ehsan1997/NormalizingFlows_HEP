@@ -147,7 +147,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 
-<!-- LICENSE -->
+<!-- LICENSE.txt -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
