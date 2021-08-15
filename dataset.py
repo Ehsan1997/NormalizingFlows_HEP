@@ -41,7 +41,16 @@ def fixed_to_table(fixed_file, output_file=None, chunksize=10000):
 
 
 class LHCAnomalyDataset(torch.utils.data.Dataset):
-    """LHC 2020 R and D dataset for Anomaly Detection"""
+    """
+    LHC 2020 R and D dataset for Anomaly Detection
+
+    Usage:
+    dataset = LHCAnomalyDataset(path_to_hdf_file)
+
+    Methods:
+    len(dataset) -> Returns the number of rows in the dataset
+    dataset[i] -> Returns the i-th row in the dataset.
+    """
 
     def __init__(self, hdf_file):
         """
@@ -70,6 +79,18 @@ class LHCAnomalyDataset(torch.utils.data.Dataset):
 
 
 class CustomTrainLoaderLHC:
+    """
+    Custom DataLoader class which speeds up batching and shuffling.
+    - Not tested on multi-threads yet.
+
+    Usage:
+    dataloader = CustomTrainLoaderLHC(hdf_file_path, batch_size, shuffle=True)
+
+    Methods:
+    Simply use as an iterator, e.g.
+    for data, labels in dataloader:
+        pass
+    """
     def __init__(self, file_name, batch_size=500, shuffle=True):
         self.ds = LHCAnomalyDataset(file_name)
         if shuffle:
@@ -99,6 +120,17 @@ class CustomTrainLoaderLHC:
 
 @torch.no_grad()
 def normalize_data(batch_data, batch_std=None, batch_mean=None):
+    """
+    Normalize data using Standard Normalizer.
+
+    Usage:
+    normalized_data, batch_std, batch_mean = normalize_data(batch_data)
+
+    Args:
+        batch_data -> data to normalize
+        batch_std -> Standard Deviation (If None, calculated automatically)
+        batch_mean -> Mean (Average) (If None, calculated automatically)
+    """
     if batch_std is None:
         batch_std = torch.std(batch_data, 0)
     if batch_mean is None:
@@ -111,6 +143,9 @@ def normalize_data(batch_data, batch_std=None, batch_mean=None):
 
 @torch.no_grad()
 def denormalize_data(batch_data, batch_std, batch_mean):
+    """
+    Denormalize data given the standard deviation and mean.
+    """
     batch_data = (batch_data * batch_std) + batch_mean
 
     return batch_data
@@ -118,6 +153,18 @@ def denormalize_data(batch_data, batch_std, batch_mean):
 
 @torch.no_grad()
 def dequantize_data(batch_data, batch_max=None, batch_min=None):
+    """
+    Dequantize data using random noise and logit function.
+    It uses Max min to first change the range of the data to [0, 1].
+
+    Usage:
+    dequantized_data, batch_max, batch_min, rand_noise = dequantize_data(batch_data)
+
+    Args:
+        batch_data -> Data to dequantize
+        batch_max -> Maximum value in the batch (one for each feature) (Calculated automatically if not provided).
+        batch_min -> Minimum Value (feature wise) (Calculated automatically if not provided).
+    """
     if batch_max is None:
         batch_max = batch_data.max(0)[0]
     if batch_min is None:
@@ -133,6 +180,12 @@ def dequantize_data(batch_data, batch_max=None, batch_min=None):
 
 @torch.no_grad()
 def reverse_dequantize_data(batch_data, batch_max, batch_min, rand_noise=None):
+    """
+    Convert the data back to original form.
+
+    Args:
+        rand_noise: Random Noise to subtract from the data (Ignored if not provided).
+    """
     ret_data = torch.sigmoid(batch_data)
     if rand_noise is not None:
         ret_data *= 255.0

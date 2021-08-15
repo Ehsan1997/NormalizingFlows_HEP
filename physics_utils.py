@@ -3,6 +3,9 @@ from pyjet import cluster, DTYPE_PTEPM
 
 
 def convert_data_to_jets(data):
+    """
+    Convert raw Anomaly Detection data (events data) to jets.
+    """
     leadpT = []
     alljets = []
     for i in range(data.shape[0]):
@@ -23,6 +26,9 @@ def convert_data_to_jets(data):
 
 
 def jets_to_mjj(jets):
+    """
+    Convert jets to Mjj.
+    """
     mjj = []
     for k in range(len(jets)):
         E = jets[k][0].e + jets[k][1].e

@@ -4,7 +4,18 @@ import torch
 
 
 def train(model, dataloader, optimizer, epoch, n_epochs, log_interval=100, device='cpu'):
+    """
+    Train the model.
 
+    Args:
+        model -> Model for training.
+        dataloader -> Dataloader.
+        optimizer -> optimizer.
+        epoch -> Current Epoch number (1 <= epoch < n_epochs)
+        n_epochs -> Total Epochs
+        log_interval -> Interval after which stats should be displayed.
+        device -> Cpu or GPU
+    """
     for i, data in enumerate(dataloader):
         model.train()
 
