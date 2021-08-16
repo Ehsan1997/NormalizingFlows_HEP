@@ -89,33 +89,15 @@ Thus, in this project we use one of the latest proposed deep generative techniqu
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Check the colab notebooks in the example folder to see working examples.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+It is recommended to use conda or venv environments if you're going to run this on your local PC.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
-
+There's a requirement.txt file with the packages required to run this project. Although it is worth noting that my local machine didn't have a GPU (I used colab), so if you have a GPU you might need to install some additional packages (If you're willing to help, please do contribute the required changes for GPU compatibility).
 
 
 <!-- USAGE EXAMPLES -->
