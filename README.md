@@ -89,7 +89,13 @@ Thus, in this project we use one of the latest proposed deep generative techniqu
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Check the colab notebooks in the example folder to see working examples.
+This project is divided into two different parts.
+* Colab Notebooks: In order to make use of GPU acceleration colab notebooks were used.
+* Current Repository: It contains code for machine learning models and utilities.
+
+Please check this [google drive folder](https://drive.google.com/drive/u/1/folders/1WKKG1v3bnAGqs82a4B1lOrI6Y1S0YAXO) for notebooks, model weights, dataset files etc.
+
+Each notebook starts with cloning this repository and makes use of the code present here.
 
 ### Prerequisites
 
@@ -177,4 +183,4 @@ Project Link: [https://github.com/Ehsan1997/NormalizingFlows_HEP](https://github
 [license-url]: https://github.com/Ehsan1997/NormalizingFlows_HEP/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ehsansonofejaz
-[product-screenshot]: https://home.cern/sites/home.web.cern.ch/files/2018-06/cc-image-lhc.jpg
+[product-screenshot]: readme_stuff/cc-image-lhc.jpg
