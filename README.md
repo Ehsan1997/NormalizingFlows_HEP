@@ -66,6 +66,7 @@
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
+* [Special Thanks](#special thanks)
 
 
 
@@ -109,7 +110,7 @@ There's a requirement.txt file with the packages required to run this project. A
 <!-- USAGE EXAMPLES -->
 ## Dataset
 
-LHC Olympics R and D Anomaly Detection dataset was used. Although I made some modifications to it. In order to access the variant used in this repository please go to the [google drive folder](https://drive.google.com/drive/u/1/folders/1OkIPaDb25JooMULL0U5uzfqHfr2ZamDw).
+[LHC Olympics R and D Anomaly Detection]() dataset was used. Although I made some modifications to it. In order to access the variant used in this repository please go to the [google drive folder](https://drive.google.com/drive/u/1/folders/1OkIPaDb25JooMULL0U5uzfqHfr2ZamDw).
 
 
 
@@ -165,7 +166,13 @@ Project Link: [https://github.com/Ehsan1997/NormalizingFlows_HEP](https://github
 * [Smash Icons](https://www.flaticon.com/authors/smashicons)
 * [Flat Icons](https://www.flaticon.com)
 
-
+<!-- SPECIAL THANKS -->
+## Special Thanks
+* [Sergei Glyzer](http://sergeigleyzer.com/)
+* [Meenakshi Narain](https://twitter.com/meenakshinarain)
+* [Emanule Usai](https://emanueleusai.com/)
+* [Aneesh Heintz]()
+* [Sinan Gençoğlu](https://www.linkedin.com/in/sinan-gencoglu/)
 
 
 
