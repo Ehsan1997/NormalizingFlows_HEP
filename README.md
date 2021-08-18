@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP">
     <img src="readme_stuff/coding.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -37,16 +37,16 @@
   <h3 align="center">Normalizing Flows for Anomaly Detection in High Energy Physics</h3>
 
   <p align="center">
-    A project that uses Masked Autoregressive Flows to perform Anomaly detection on data from Large Hadron Collider.
+    A research project that uses Masked Autoregressive Flows to perform Anomaly detection on data from Large Hadron Collider. (This project was carried out for GSoC-2021 (Google Summer of Code) with ML4SCI (Machine Learning for Science).
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/Ehsan1997/NomralizingFlows_HEP/examples">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP/issues">Request Feature</a>
   </p>
 </p>
 
@@ -72,7 +72,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
+![Product Name Screen Shot][product-screenshot]
 
 Scientific Experiments yield abundant amount of data.
 Traditionally processing this data requires a lot of supervision from different entities.
@@ -80,9 +81,8 @@ Advent of Deep Generative techniques in the field of anomaly detection have yiel
 Thus, in this project we use one of the latest proposed deep generative technique known as normalizing flows for anomaly detection in High Energy Physics data.
 
 ### Built With
-* [Pytorch](https://getbootstrap.com)
-* [Python](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Pytorch](https://pytorch.org/)
+* [Python](https://www.python.org/)
 
 
 
@@ -101,11 +101,9 @@ There's a requirement.txt file with the packages required to run this project. A
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Dataset
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+LHC Olympics R and D Anomaly Detection dataset was used. Although I made some modifications to it. In order to access the variant used in this repository please go to the [google drive folder](https://drive.google.com/drive/u/1/folders/1OkIPaDb25JooMULL0U5uzfqHfr2ZamDw).
 
 
 
@@ -139,9 +137,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Muhammad Ehsan ul Haq - [@EhsanBinEjaz](https://twitter.com/Ehsanbinejaz) - ehsanulhaq18@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Ehsan1997/NormalizingFlows_HEP](https://github.com/Ehsan1997/NormalizingFlows_HEP)
 
 
 
@@ -158,6 +156,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
+* [Smash Icons](https://www.flaticon.com/authors/smashicons)
+* [Flat Icons](https://www.flaticon.com)
 
 
 
@@ -177,4 +177,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [license-url]: https://github.com/Ehsan1997/NormalizingFlows_HEP/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ehsansonofejaz
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://home.cern/sites/home.web.cern.ch/files/2018-06/cc-image-lhc.jpg
