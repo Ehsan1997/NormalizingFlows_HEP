@@ -66,7 +66,7 @@
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
-* [Special Thanks](#<special thanks>)
+* [Special Thanks](<#special thanks>)
 
 
 
