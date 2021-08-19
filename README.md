@@ -95,6 +95,7 @@ This project is divided into two different parts.
 * Current Repository: It contains code for machine learning models and utilities.
 
 Please check this [google drive folder](https://drive.google.com/drive/u/1/folders/1WKKG1v3bnAGqs82a4B1lOrI6Y1S0YAXO) for notebooks, model weights, dataset files etc.
+
 It is recommended to use [this guide](readme_stuff/GoogleDriveFolderGuide.md) for the google drive folder, in order to understand the purpose of each file.
 
 Each notebook starts with cloning this repository and makes use of the code present here.
