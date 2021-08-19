@@ -37,9 +37,9 @@
   <h3 align="center">Normalizing Flows for Anomaly Detection in High Energy Physics</h3>
 
   <p align="center">
-    A research project that uses Masked Autoregressive Flows to perform Anomaly detection on data from Large Hadron Collider. (This project was carried out for GSoC-2021 (Google Summer of Code) with ML4SCI (Machine Learning for Science).
+    A research project that uses Masked Autoregressive Flows to perform Anomaly detection on data from Large Hadron Collider. (This project was carried out for GSoC-2021 (Google Summer of Code) with ML4SCI (Machine Learning for Science), [Click Here for more details](https://summerofcode.withgoogle.com/projects/#4624155581874176)).
     <br />
-    <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP"><strong>Explore the docs »</strong></a>
+    <a href="readme_stuff/Documentation.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://colab.research.google.com/drive/1UjTLf7a1995erDQH4x7b9VkTQrv0XS_S?authuser=1#scrollTo=eEZQ-qXuFOB0">View Demo</a>
