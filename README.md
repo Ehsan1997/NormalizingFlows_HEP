@@ -42,7 +42,7 @@
     <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Ehsan1997/NomralizingFlows_HEP/examples">View Demo</a>
+    <a href="https://colab.research.google.com/drive/1UjTLf7a1995erDQH4x7b9VkTQrv0XS_S?authuser=1#scrollTo=eEZQ-qXuFOB0">View Demo</a>
     ·
     <a href="https://github.com/Ehsan1997/NormalizingFlows_HEP/issues">Report Bug</a>
     ·
